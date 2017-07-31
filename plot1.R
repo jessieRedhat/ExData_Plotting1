@@ -16,6 +16,7 @@ dt[,1] <- as.POSIXct(x,format = "%d/ %m/ %Y %H:%M:%S",tz="")
 dt <- dt[,c(1,3,4,5,6,7,8,9)]
  
 
+par(mfrow = c(1, 1))
 library(datasets)
 with(faithful, hist(dt$Global_active_power,col = "red",xlab = "Global_active_power",main="")) 
 

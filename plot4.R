@@ -19,6 +19,17 @@ dt <- dt[,c(1,3,4,5,6,7,8,9)]
 
 library(ggplot2)
 
+par(mfrow = c(2, 2), mar = c(5, 4, 2, 1))
+
+# 1
+with(faithful, plot(dt$Date,dt$Global_active_power,xlab = "",
+                    ylab = "Global Active power",type = "l" ))
+
+#2
+with(faithful, plot(dt$Date,dt$Voltage,xlab = "",
+                    ylab = "Voltage",type = "l" ))
+
+#3
 with(faithful, 
 plot(dt$Date,dt$Sub_metering_1,xlab = "",
      ylab = "Energy sub metering",type = "l",col = "black" ))
@@ -27,7 +38,11 @@ lines(dt$Date,dt$Sub_metering_3,col = "blue" )
 legend("topright",pch = "-",col = c("black","red","blue"), 
        legend = c("Sub_metering_1","Sub_metering_2","Sub_metering_3") )
 
+#4
+with(faithful, plot(dt$Date,dt$Global_reactive_power,xlab = "",
+                    ylab = "Global_reactive_power",type = "l" ))
 
-dev.copy(png, file = "Plot3.png")
+
+dev.copy(png, file = "Plot4.png")
 dev.off()
  
